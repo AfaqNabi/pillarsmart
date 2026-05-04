@@ -1,0 +1,46 @@
+name: Verify PillarSmart
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    env:
+      NEXT_PUBLIC_SITE_URL: https://pillarsmart.com
+      NEXT_PUBLIC_GHL_WEBHOOK_URL: https://hooks.leadconnectorhq.com/webhook/YOUR_WEBHOOK_ID
+      NEXT_PUBLIC_CLIENT_LOGIN_URL: https://app.pillarsmart.com
+      NEXT_PUBLIC_STRIPE_STARTER_URL: https://buy.stripe.com/test_starter_placeholder
+      NEXT_PUBLIC_STRIPE_GROWTH_URL: https://buy.stripe.com/test_growth_placeholder
+      NEXT_PUBLIC_STRIPE_SCALE_URL: https://buy.stripe.com/test_scale_placeholder
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Build
+        run: pnpm build

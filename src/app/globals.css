@@ -1,26 +1,176 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f4efe3;
+  --foreground: #112033;
+  --card: rgba(255, 252, 246, 0.82);
+  --card-foreground: #112033;
+  --popover: #fffdf8;
+  --popover-foreground: #112033;
+  --primary: #0e6f6c;
+  --primary-foreground: #f8fafc;
+  --secondary: #fff3dd;
+  --secondary-foreground: #734400;
+  --muted: #e4ddd0;
+  --muted-foreground: #5e6673;
+  --accent: #f3b247;
+  --accent-foreground: #402400;
+  --destructive: #b43731;
+  --destructive-foreground: #fff9f6;
+  --border: rgba(17, 32, 51, 0.12);
+  --input: rgba(17, 32, 51, 0.16);
+  --ring: rgba(14, 111, 108, 0.35);
+  --radius: 1.5rem;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+  --radius-sm: calc(var(--radius) - 10px);
+  --radius-md: calc(var(--radius) - 6px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 6px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    background-image:
+      radial-gradient(circle at top left, rgba(14, 111, 108, 0.18), transparent 28%),
+      radial-gradient(circle at 85% 15%, rgba(243, 178, 71, 0.2), transparent 20%),
+      linear-gradient(180deg, #f8f3ea 0%, #f4efe3 40%, #efe6d7 100%);
+    min-height: 100vh;
+  }
+
+  ::selection {
+    background: rgba(14, 111, 108, 0.2);
+    color: #102233;
+  }
+
+  a,
+  button {
+    @apply transition-all duration-200;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display), Georgia, serif;
+    letter-spacing: -0.03em;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .shell {
+    @apply mx-auto w-full max-w-7xl px-6 md:px-8;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary shadow-sm backdrop-blur;
+  }
+
+  .panel {
+    @apply rounded-[32px] border border-white/80 bg-white/72 shadow-[0_24px_70px_-36px_rgba(17,32,51,0.45)] backdrop-blur-md;
+  }
+
+  .section-grid {
+    @apply grid gap-6 lg:gap-8;
+  }
+
+  .display-title {
+    @apply text-5xl leading-[0.92] md:text-6xl lg:text-7xl;
+  }
+
+  .soft-rule {
+    background:
+      linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(17, 32, 51, 0.14) 20%,
+        rgba(17, 32, 51, 0.14) 80%,
+        transparent 100%
+      );
+  }
+
+  .article-prose {
+    @apply text-base leading-8 text-slate-700;
+  }
+
+  .article-prose h2 {
+    @apply mt-12 text-3xl text-slate-950;
+  }
+
+  .article-prose h3 {
+    @apply mt-10 text-2xl text-slate-900;
+  }
+
+  .article-prose p {
+    @apply mt-5;
+  }
+
+  .article-prose ul,
+  .article-prose ol {
+    @apply mt-5 space-y-3 pl-6;
+  }
+
+  .article-prose li {
+    @apply marker:text-primary;
+  }
+
+  .article-prose a {
+    @apply font-semibold text-primary underline decoration-primary/25 underline-offset-4;
+  }
+
+  .article-prose blockquote {
+    @apply mt-8 rounded-[24px] border border-primary/15 bg-primary/5 px-6 py-5 text-lg text-slate-800;
+  }
+
+  .article-prose code {
+    @apply rounded bg-slate-950 px-1.5 py-0.5 text-sm text-white;
+  }
+
+  .article-prose pre {
+    @apply mt-8 overflow-x-auto rounded-[24px] bg-slate-950 p-5 text-sm text-slate-100;
+  }
+
+  .article-prose hr {
+    @apply my-10 border-none;
+    height: 1px;
+    background:
+      linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(17, 32, 51, 0.14) 20%,
+        rgba(17, 32, 51, 0.14) 80%,
+        transparent 100%
+      );
+  }
 }

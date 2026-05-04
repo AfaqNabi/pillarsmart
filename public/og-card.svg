@@ -1,0 +1,18 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#F4EFE3"/>
+  <circle cx="1046" cy="92" r="164" fill="#F3B247" fill-opacity="0.22"/>
+  <circle cx="104" cy="96" r="150" fill="#0E6F6C" fill-opacity="0.18"/>
+  <rect x="84" y="92" width="1032" height="446" rx="38" fill="#FFFDF8"/>
+  <rect x="84" y="92" width="1032" height="446" rx="38" stroke="#112033" stroke-opacity="0.08"/>
+  <rect x="146" y="162" width="120" height="120" rx="28" fill="#0E6F6C"/>
+  <path d="M188.174 207.132H223.151C229.918 207.132 235.403 212.617 235.403 219.384V254.36" stroke="#F8FAFC" stroke-width="16" stroke-linecap="round"/>
+  <path d="M185.549 240.264L235.402 190.412" stroke="#F8FAFC" stroke-width="16" stroke-linecap="round"/>
+  <text x="304" y="228" fill="#112033" font-family="Arial, sans-serif" font-size="78" font-weight="700">PillarSmart</text>
+  <text x="304" y="306" fill="#475569" font-family="Arial, sans-serif" font-size="34">Static lead engine for local business growth.</text>
+  <rect x="146" y="360" width="280" height="96" rx="24" fill="#112033"/>
+  <text x="182" y="418" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="34" font-weight="700">Static export</text>
+  <rect x="454" y="360" width="302" height="96" rx="24" fill="#FFF3DD"/>
+  <text x="486" y="418" fill="#734400" font-family="Arial, sans-serif" font-size="34" font-weight="700">GHL webhooks</text>
+  <rect x="784" y="360" width="270" height="96" rx="24" fill="#E7F5F4"/>
+  <text x="830" y="418" fill="#0E6F6C" font-family="Arial, sans-serif" font-size="34" font-weight="700">Pages</text>
+</svg>

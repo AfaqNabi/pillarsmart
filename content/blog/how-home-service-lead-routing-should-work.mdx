@@ -1,0 +1,51 @@
+---
+title: "How home-service lead routing should work in a lightweight stack"
+description: "A blueprint for getting roofing, plumbing, dental, and similar service leads from static landing page to follow-up workflow without overengineering."
+date: 2026-02-19
+author: "PillarSmart Editorial"
+category: "Lead Routing"
+tags: [lead-routing, home-services, cloudflare-pages]
+---
+
+Home-service companies need simple systems that move fast. Fancy architecture usually creates more maintenance than leverage.
+
+## The lean path
+
+The leanest useful path looks like this:
+
+1. the visitor lands on a fast static page
+2. they submit a contact or quote request
+3. the browser posts the payload to an inbound webhook
+4. GoHighLevel creates the contact and starts the right workflow
+5. the team works the opportunity inside the white-labeled app
+
+That is enough for a serious launch.
+
+## Where the website should stop
+
+The website should do four things extremely well:
+
+- communicate the offer
+- prove credibility
+- capture the lead
+- push the lead downstream
+
+It does not need to become the CRM.
+
+## Where the app should begin
+
+The app takes over once the lead exists:
+
+- reminders
+- sales pipeline stages
+- review requests
+- reactivation campaigns
+- reporting
+
+Separating those concerns keeps the front-end light and the operations layer powerful.
+
+## Why this fits Cloudflare Pages hosting
+
+Cloudflare Pages is cheap, durable, and globally fast for a front-end that is mostly marketing pages and content rather than authenticated product screens.
+
+You spend the money where it creates leverage: the workflows, not the brochureware.
