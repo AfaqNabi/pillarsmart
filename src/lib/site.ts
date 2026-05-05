@@ -3,14 +3,10 @@ export type NavLink = {
   label: string;
 };
 
-export type PricingPlan = {
+export type OfferTrack = {
   name: string;
-  monthlyPrice: number;
   summary: string;
-  audience: string;
-  trialLabel: string;
   featured?: boolean;
-  checkoutUrl: string;
   features: string[];
 };
 
@@ -30,92 +26,91 @@ export const siteConfig = {
   name: 'PillarSmart',
   url: siteUrl,
   description:
-    'A statically generated lead engine for local businesses, wired to GoHighLevel for nurture, follow-up, reviews, and revenue reporting.',
+    'Done-for-you lead response and follow-up for trades and service businesses that want faster replies, fewer missed leads, and more booked jobs.',
   clientLoginUrl,
+  primaryCtaLabel: 'Get Your Free Demo',
+  primaryCtaHref: '/contact/',
   navLinks: [
-    { href: '/pricing/', label: 'Pricing' },
-    { href: '/contact/', label: 'Contact' },
+    { href: '/pricing/', label: 'How It Works' },
+    { href: '/contact/', label: 'Get Demo' },
     { href: '/blog/', label: 'Blog' },
   ] satisfies NavLink[],
   heroPillars: [
-    'Deploy to Cloudflare Pages with global edge caching and preview builds.',
-    'Push contact-form submissions straight into your GoHighLevel pipeline.',
-    'Rank clean static pages and blog posts without a database dependency.',
+    'Missed calls turn into fast text conversations while you are still on the job.',
+    'Website, phone, and message leads get follow-up without you chasing them.',
+    'You can review every conversation and step in anytime.',
   ],
-  pricingPlans: [
+  offerTracks: [
     {
-      name: 'Launch',
-      monthlyPrice: 149,
-      summary: 'A polished command center for single-location operators.',
-      audience: 'Perfect for owner-operators replacing duct-taped follow-up.',
-      trialLabel: 'Start 14-Day Trial',
-      checkoutUrl:
-        process.env.NEXT_PUBLIC_STRIPE_STARTER_URL?.trim() ||
-        'https://buy.stripe.com/test_starter_placeholder',
+      name: 'Capture every inquiry',
+      summary:
+        'Make sure calls, chats, and quote requests do not stall while your team is busy working.',
       features: [
-        'Lead-capture forms wired to GHL',
-        'Missed-call text back workflow',
-        'Review request automation',
-        'One landing page and one funnel offer',
-        'Weekly KPI digest layout',
+        'Missed-call text back from your business number',
+        'Website form and chat follow-up routed into one place',
+        'Fast replies for common lead questions and quote requests',
+        'Lead handoff rules for when a real person should step in',
       ],
     },
     {
-      name: 'Momentum',
-      monthlyPrice: 297,
-      summary: 'The flagship operating system for teams that need throughput.',
-      audience: 'Best for growing service businesses with dedicated sales help.',
-      trialLabel: 'Start 14-Day Trial',
+      name: 'Keep leads moving',
+      summary:
+        'Stay consistent after the first reply so warm leads do not disappear between jobs or after hours.',
       featured: true,
-      checkoutUrl:
-        process.env.NEXT_PUBLIC_STRIPE_GROWTH_URL?.trim() ||
-        'https://buy.stripe.com/test_growth_placeholder',
       features: [
-        'Everything in Launch',
-        'Two-way inbox routing and pipeline stages',
-        'Multi-step nurture sequences',
-        'Booking reminders and no-show recovery',
-        'Campaign dashboards for ads, forms, and close rate',
+        'Booking links at the right point in the conversation',
+        'Reminders, no-show follow-up, and simple nurture flows',
+        'Review requests after completed work',
+        'Clear next-step messaging instead of one-and-done replies',
       ],
     },
     {
-      name: 'Authority',
-      monthlyPrice: 497,
-      summary: 'A multi-channel growth stack for operators scaling locations.',
-      audience: 'For teams layering outbound campaigns, reporting, and ops.',
-      trialLabel: 'Start 14-Day Trial',
-      checkoutUrl:
-        process.env.NEXT_PUBLIC_STRIPE_SCALE_URL?.trim() ||
-        'https://buy.stripe.com/test_scale_placeholder',
+      name: 'Stay in control',
+      summary:
+        'Know what is happening with your leads without living in your inbox all day.',
       features: [
-        'Everything in Momentum',
-        'Multi-location reporting views',
-        'Advanced automations for reactivation',
-        'AI-assisted lead qualification prompts',
-        'White-glove launch checklist and handoff notes',
+        'Conversation visibility when you want to review a lead',
+        'Manual takeover whenever a hot lead needs a human touch',
+        'Training around your services, pricing, and tone',
+        'A rollout that fits how your business already sells and books work',
       ],
     },
-  ] satisfies PricingPlan[],
+  ] satisfies OfferTrack[],
   faqs: [
     {
-      question: 'Why use a static Next.js export instead of a hosted app server?',
+      question: 'How is this different from a chatbot?',
       answer:
-        'A static export keeps hosting costs tiny, reduces moving parts, and still gives you modern UX, metadata, and content management through the filesystem.',
+        'PillarSmart is built around your real services, tone, and booking process. The goal is not to sound clever. The goal is to reply quickly, guide good leads forward, and hand off the wrong conversations instead of guessing.',
     },
     {
-      question: 'How does the contact form work without a backend?',
+      question: 'What if it says something wrong?',
       answer:
-        'The form posts from the browser to your GoHighLevel inbound webhook. If CORS gets in the way, the component falls back to beacon-style delivery while keeping the site serverless.',
+        'The system is trained on your business rules before it goes live. Unknown or sensitive questions should trigger a handoff instead of a made-up answer, and you can review conversations whenever you want.',
     },
     {
-      question: 'Can I connect live Stripe and GoHighLevel checkout links later?',
+      question: 'Do I lose control of customer conversations?',
       answer:
-        'Yes. The site reads public build-time values so you can replace placeholders with live checkout URLs and rebuild for production.',
+        'No. You stay in control. PillarSmart helps with speed and consistency, but you can step in on any conversation, review what was said, and decide where human follow-up matters most.',
+    },
+    {
+      question: 'How long does setup take?',
+      answer:
+        'The goal is a fast rollout. We learn how your business handles leads, connect the key channels, and shape the messaging around your workflow before anything goes live.',
+    },
+    {
+      question: 'What businesses is this best for?',
+      answer:
+        'The strongest fit is trades-first and service businesses that already get calls, quote requests, or messages, but lose some of them because replies are slow or follow-up is inconsistent.',
+    },
+    {
+      question: 'What happens after I request a demo?',
+      answer:
+        'We review your business, map the main lead scenarios you deal with, and reach out within one business day to book a walkthrough of a custom demo built around your lead flow.',
     },
   ],
   contactSteps: [
-    'A visitor submits the static contact form.',
-    'The payload posts directly into your GoHighLevel webhook.',
-    'GHL creates the contact, triggers nurture, and routes the lead to the right pipeline.',
+    'Tell us what kind of leads you get and where follow-up usually slips.',
+    'We shape a demo around missed calls, messages, quote requests, and booking handoff.',
+    'We walk you through the flow and show how PillarSmart would fit your business.',
   ],
 };

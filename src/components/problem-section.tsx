@@ -1,21 +1,32 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowDownRight, BellRing, CircleDashed, Star } from 'lucide-react';
+import {
+  ArrowDownRight,
+  MessageCircleOff,
+  PhoneOff,
+  RefreshCcwDot,
+  StarOff,
+} from 'lucide-react';
 
 const painPoints = [
   {
-    title: 'Leads disappear between click and callback',
-    body: 'Every extra handoff creates delay. Static pages are fast, but the real win is piping every form fill into an immediate nurture sequence.',
-    icon: BellRing,
+    title: 'Missed calls stack up while the workday keeps moving',
+    body: 'When the phone rings during a site visit, the lead usually gets voicemail, then silence, then your competitor.',
+    icon: PhoneOff,
   },
   {
-    title: 'Local SEO content stalls when it depends on the CMS backlog',
-    body: 'Publishing articles from the filesystem keeps the content operation tiny, versioned, and easy to ship alongside the marketing site.',
-    icon: CircleDashed,
+    title: 'Website and DM leads wait too long for a real response',
+    body: 'A quote request after hours or a message while you are driving between jobs can sit just long enough to go cold.',
+    icon: MessageCircleOff,
   },
   {
-    title: 'Operators need clarity, not another dashboard graveyard',
-    body: 'The site should tee up one clear action: book, call, or start a trial. Everything else belongs inside the white-labeled app.',
-    icon: Star,
+    title: 'Most follow-up dies after the first touch',
+    body: 'Leads who say "let me think about it" rarely hear back in a consistent way, so warm opportunities fade out.',
+    icon: RefreshCcwDot,
+  },
+  {
+    title: 'Review requests happen only when someone remembers',
+    body: 'Good jobs get finished, but the happy customer is never nudged for a review because the team is already onto the next stop.',
+    icon: StarOff,
   },
 ];
 
@@ -23,18 +34,18 @@ export function ProblemSection() {
   return (
     <section className='shell py-20 md:py-24'>
       <div className='max-w-3xl'>
-        <span className='eyebrow'>What we are solving</span>
+        <span className='eyebrow'>Why service teams lose good leads</span>
         <h2 className='mt-4 text-4xl md:text-5xl'>
-          Local businesses do not need a giant marketing stack. They need one
-          clear operating surface.
+          The problem usually is not lead volume. It is response time and
+          follow-up.
         </h2>
         <p className='mt-4 text-lg leading-8 text-slate-700'>
-          PillarSmart is tuned for owners who want a sharper front-end, better
-          search visibility, and leads routed directly into follow-up without
-          spinning up a custom backend.
+          Trades-first businesses lose work when calls come in at the wrong
+          moment, messages sit overnight, or nobody has time to keep the
+          conversation moving after the first reply.
         </p>
       </div>
-      <div className='mt-10 grid gap-6 lg:grid-cols-3'>
+      <div className='mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4'>
         {painPoints.map((point) => {
           const Icon = point.icon;
 
@@ -57,10 +68,10 @@ export function ProblemSection() {
         <div className='grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center'>
           <div>
             <div className='text-xs font-semibold uppercase tracking-[0.24em] text-slate-500'>
-              From messy stack to simple flow
+              What this looks like in real life
             </div>
             <h3 className='mt-3 text-3xl text-slate-950'>
-              One static site in front, one workflow engine behind it.
+              Busy owners do the work. Fast follow-up gets pushed aside.
             </h3>
           </div>
           <div className='grid gap-4 md:grid-cols-2'>
@@ -69,8 +80,8 @@ export function ProblemSection() {
                 Before
               </div>
               <p className='mt-3 text-base leading-7 text-slate-700'>
-                Slow landing pages, one-off tools, missed follow-up, and no
-                clean publishing motion for SEO content.
+                A homeowner calls while you are on-site, sends a message later,
+                and never hears back fast enough to trust you with the job.
               </p>
             </div>
             <div className='rounded-[24px] bg-primary px-5 py-5 text-primary-foreground'>
@@ -79,8 +90,8 @@ export function ProblemSection() {
                 After
               </div>
               <p className='mt-3 text-base leading-7 text-white/85'>
-                An edge-cached site, direct webhook handoff into GHL, and a
-                blog that ships as part of your build pipeline.
+                The lead gets a fast reply, the conversation keeps moving, and
+                you can step in only when the job is hot enough to need you.
               </p>
             </div>
           </div>

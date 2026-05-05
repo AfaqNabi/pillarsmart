@@ -15,7 +15,7 @@ export function SiteHeader() {
               PillarSmart
             </div>
             <div className='text-xs uppercase tracking-[0.2em] text-slate-500'>
-              Static site. Live pipeline.
+              Faster follow-up for busy service teams
             </div>
           </div>
         </Link>
@@ -35,7 +35,9 @@ export function SiteHeader() {
             <a href={siteConfig.clientLoginUrl}>Client Login</a>
           </Button>
           <Button asChild>
-            <Link href='/pricing/'>Start 14-Day Trial</Link>
+            <Link href={siteConfig.primaryCtaHref}>
+              {siteConfig.primaryCtaLabel}
+            </Link>
           </Button>
         </div>
       </div>

@@ -1,43 +1,43 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import {
-  ArrowUpRight,
-  BadgeDollarSign,
-  Bot,
-  FileText,
+  CalendarRange,
+  Gauge,
   MessageSquareMore,
-  Search,
+  PhoneCall,
+  ShieldCheck,
+  Star,
 } from 'lucide-react';
 
 const features = [
   {
-    title: 'Static export architecture',
-    copy: 'Every core route compiles into static HTML for Cloudflare Pages and its global edge cache. No app server, no runtime DB dependency, and very little operational overhead.',
-    icon: ArrowUpRight,
+    title: 'Missed-call text back',
+    copy: 'When someone calls and nobody can answer, the conversation still starts instead of dying in voicemail.',
+    icon: PhoneCall,
   },
   {
-    title: 'GoHighLevel webhook intake',
-    copy: 'Contact submissions are validated in the browser and posted to GHL so leads land directly in your workflows and pipeline automations.',
+    title: 'Website and message follow-up',
+    copy: 'Quote requests, chat starts, and direct messages can all be answered quickly without waiting for someone to get free.',
     icon: MessageSquareMore,
   },
   {
-    title: 'MDX-style content operation',
-    copy: 'Blog posts live in version control, build into static routes, and give the site a clean, durable publishing engine for local SEO.',
-    icon: FileText,
+    title: 'Booking reminders and no-show recovery',
+    copy: 'When a lead is ready, the next step is sent clearly, with reminders and simple re-book prompts baked in.',
+    icon: CalendarRange,
   },
   {
-    title: 'Pricing built for checkout',
-    copy: 'Each pricing card links directly to a Stripe or GoHighLevel checkout URL so your funnel can move from curiosity to trial without extra steps.',
-    icon: BadgeDollarSign,
+    title: 'Lead nurture after the first reply',
+    copy: 'Warm leads do not have to disappear just because the first conversation did not close the job on the spot.',
+    icon: Gauge,
   },
   {
-    title: 'Search-ready metadata',
-    copy: 'Open Graph tags, canonical metadata, robots, and sitemap generation are all baked into the build output for cleaner indexing.',
-    icon: Search,
+    title: 'Review requests after the work is done',
+    copy: 'Satisfied customers can be nudged at the right time so good jobs turn into stronger social proof over time.',
+    icon: Star,
   },
   {
-    title: 'Automation-ready positioning',
-    copy: 'The design language reinforces PillarSmart as the system behind the scenes, not just another brochure site with decorative motion.',
-    icon: Bot,
+    title: 'Owner oversight and handoff rules',
+    copy: 'You keep visibility into conversations and can take over whenever a lead needs a human touch or special handling.',
+    icon: ShieldCheck,
   },
 ];
 
@@ -45,11 +45,16 @@ export function FeaturesGrid() {
   return (
     <section className='shell py-20 md:py-24'>
       <div className='max-w-3xl'>
-        <span className='eyebrow'>Platform pillars</span>
+        <span className='eyebrow'>What is included</span>
         <h2 className='mt-4 text-4xl md:text-5xl'>
-          Everything in the build points toward one job: capture, route, and
-          convert demand.
+          The system is built around the moments where service businesses
+          usually drop the ball.
         </h2>
+        <p className='mt-4 text-lg leading-8 text-slate-700'>
+          PillarSmart is designed to help with fast first response, consistent
+          follow-up, and clear next steps without forcing you to babysit your
+          inbox.
+        </p>
       </div>
       <div className='mt-10 grid gap-6 lg:grid-cols-3'>
         {features.map((feature) => {

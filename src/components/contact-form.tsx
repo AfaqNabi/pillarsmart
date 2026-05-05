@@ -60,10 +60,11 @@ export function ContactForm() {
     }
 
     if (!webhookUrl || isPlaceholderValue(webhookUrl)) {
+      console.error('Missing NEXT_PUBLIC_GHL_WEBHOOK_URL for demo requests.');
       setSubmissionState({
         kind: 'error',
         message:
-          'Add NEXT_PUBLIC_GHL_WEBHOOK_URL before launch so submissions can reach GoHighLevel.',
+          'We could not submit your demo request right now. Please try again shortly.',
       });
       return;
     }
@@ -92,7 +93,7 @@ export function ContactForm() {
       setSubmissionState({
         kind: 'success',
         message:
-          'Lead sent to GoHighLevel. If your workflow is connected, nurture should start immediately.',
+          'Thanks - your demo request was sent. We will review it and reach out within one business day.',
       });
     } catch {
       let delivered = false;
@@ -126,7 +127,7 @@ export function ContactForm() {
         setSubmissionState({
           kind: 'success',
           message:
-            'Lead dispatched using the browser fallback. Confirm the inbound webhook is mapped inside GoHighLevel.',
+            'Thanks - your demo request was sent. We will review it and reach out within one business day.',
         });
         return;
       }
@@ -134,7 +135,7 @@ export function ContactForm() {
       setSubmissionState({
         kind: 'error',
         message:
-          'The webhook could not be reached from this browser. Verify the URL and consider an API Gateway proxy if GHL blocks CORS.',
+          'We could not submit your demo request just now. Please try again in a moment.',
       });
     }
   };
@@ -162,7 +163,7 @@ export function ContactForm() {
           <Input
             id='email'
             type='email'
-            placeholder='jordan@pillarsmart.com'
+            placeholder='jordan@northsideplumbing.com'
             autoComplete='email'
             {...register('email')}
           />
@@ -172,10 +173,10 @@ export function ContactForm() {
         </div>
       </div>
       <div className='grid gap-2'>
-        <Label htmlFor='company'>Company</Label>
+        <Label htmlFor='company'>Business name</Label>
         <Input
           id='company'
-          placeholder='Northside Dental'
+          placeholder='Northside Plumbing'
           autoComplete='organization'
           {...register('company')}
         />
@@ -193,10 +194,10 @@ export function ContactForm() {
         />
       </div>
       <div className='grid gap-2'>
-        <Label htmlFor='message'>Project brief</Label>
+        <Label htmlFor='message'>What leads are you getting or missing?</Label>
         <Textarea
           id='message'
-          placeholder='We need a fast site, blog content, and our leads routed into GoHighLevel with booked-call follow-up.'
+          placeholder='We get calls while we are on jobs, our website quote requests can sit too long, and I want to see how PillarSmart would handle missed calls and follow-up.'
           {...register('message')}
         />
         {errors.message ? (
@@ -207,12 +208,12 @@ export function ContactForm() {
         {isSubmitting ? (
           <>
             <Loader2 className='mr-2 h-4 w-4 animate-spin' />
-            Sending to GoHighLevel
+            Sending your demo request
           </>
         ) : (
           <>
             <Send className='mr-2 h-4 w-4' />
-            Send to GoHighLevel
+            Request My Free Demo
           </>
         )}
       </Button>

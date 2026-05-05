@@ -2,18 +2,7 @@ import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
 import { siteConfig } from '@/lib/site';
 import type { Metadata, Viewport } from 'next';
-import { Fraunces, Manrope } from 'next/font/google';
 import './globals.css';
-
-const fraunces = Fraunces({
-  variable: '--font-display',
-  subsets: ['latin'],
-});
-
-const manrope = Manrope({
-  variable: '--font-body',
-  subsets: ['latin'],
-});
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -24,18 +13,18 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: 'PillarSmart | The Unified OS for Local Business',
+    default: 'PillarSmart | Done-for-You Lead Response for Service Businesses',
     template: '%s | PillarSmart',
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
   keywords: [
-    'local business automation',
-    'go high level website',
-    'static nextjs marketing site',
-    'lead capture landing page',
-    'local seo website',
-    'automation for local business',
+    'service business lead response',
+    'contractor lead follow up',
+    'missed call text back',
+    'trades business automation',
+    'go high level lead nurture',
+    'service business booking automation',
   ],
   alternates: {
     canonical: '/',
@@ -47,7 +36,7 @@ export const metadata: Metadata = {
     type: 'website',
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: 'PillarSmart | The Unified OS for Local Business',
+    title: 'PillarSmart | Done-for-You Lead Response for Service Businesses',
     description: siteConfig.description,
     images: [
       {
@@ -60,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'PillarSmart | The Unified OS for Local Business',
+    title: 'PillarSmart | Done-for-You Lead Response for Service Businesses',
     description: siteConfig.description,
     images: ['/og-card.svg'],
   },
@@ -83,10 +72,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang='en'
-      className={`${fraunces.variable} ${manrope.variable} h-full scroll-smooth`}
-    >
+    <html lang='en' className='h-full scroll-smooth'>
       <body className='min-h-full bg-background text-foreground antialiased'>
         <div className='relative flex min-h-screen flex-col'>
           <SiteHeader />

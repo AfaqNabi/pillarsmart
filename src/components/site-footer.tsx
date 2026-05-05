@@ -8,8 +8,8 @@ export function SiteFooter() {
         <div>
           <div className='text-2xl text-slate-950'>PillarSmart</div>
           <p className='mt-3 max-w-2xl text-sm leading-7 text-slate-600'>
-            A statically generated lead engine for local businesses, backed by
-            GoHighLevel workflows, Stripe checkout, and Cloudflare Pages edge hosting.
+            Done-for-you lead response and follow-up for trades and service
+            businesses that want fewer missed leads and more booked jobs.
           </p>
         </div>
         <div className='flex flex-wrap items-center gap-4 text-sm font-medium text-slate-700 md:justify-end'>

@@ -7,7 +7,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Blog',
   description:
-    'Static-exported articles for local-business operators using PillarSmart, GoHighLevel, and SEO-led growth.',
+    'Articles for service-business owners who want faster follow-up, cleaner lead handling, and stronger booking systems.',
 };
 
 export default function BlogIndexPage() {
@@ -17,14 +17,14 @@ export default function BlogIndexPage() {
   return (
     <div className='shell py-16 md:py-20'>
       <div className='max-w-3xl'>
-        <span className='eyebrow'>MDX content engine</span>
+        <span className='eyebrow'>Insights for service teams</span>
         <h1 className='mt-4 text-5xl md:text-6xl'>
-          Articles that ship with the build and keep the SEO motion alive.
+          Practical ideas for better lead response, follow-up, and booking flow.
         </h1>
         <p className='mt-5 text-lg leading-8 text-slate-700'>
-          Every article in PillarSmart lives as a local `.mdx` file inside the
-          repo, which means content is versioned, statically generated, and
-          ready for Cloudflare Pages edge delivery.
+          Use these articles to understand where service businesses usually lose
+          good inquiries and what a stronger follow-up system should look like
+          once a lead reaches out.
         </p>
       </div>
       {featuredPost ? (
