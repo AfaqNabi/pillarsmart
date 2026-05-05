@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/lib/site';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export function SiteHeader() {
@@ -7,15 +8,20 @@ export function SiteHeader() {
     <header className='sticky top-0 z-50 border-b border-black/8 bg-[rgba(244,239,227,0.82)] backdrop-blur-xl'>
       <div className='shell flex flex-wrap items-center justify-between gap-4 py-4'>
         <Link href='/' className='flex items-center gap-3'>
-          <span className='flex h-11 w-11 items-center justify-center rounded-full bg-primary text-sm font-bold tracking-[0.22em] text-primary-foreground'>
-            PS
-          </span>
+          <Image
+            src='/pillarsmart-logo-mark.png'
+            alt='PillarSmart logo'
+            width={512}
+            height={577}
+            className='h-11 w-auto shrink-0 md:h-12'
+            priority
+          />
           <div>
             <div className='text-lg font-semibold tracking-tight text-slate-950'>
               PillarSmart
             </div>
             <div className='text-xs uppercase tracking-[0.2em] text-slate-500'>
-              Faster follow-up for busy service teams
+              Structure your growth
             </div>
           </div>
         </Link>
